@@ -2830,3 +2830,4 @@ Start Count;End Count;Improvement Count;Starting Positions;Move Sequence;Move Co
 13;14;1;E2-E4-E6-E7-E8-K1-K11-K12-K2-K4-K6-K7-K9;Bb Rb Bb Rb L L L L B R B R Lb R Lb Rb Lb Lb B Rb;20;0.05
 7;9;2;E1-E2-E7-E8-K1-K4-K8;B R Bb Rb Ub B U;7;0.29
 12;13;1;E1-E2-E6-E7-E8-K1-K10-K11-K3-K4-K8-K9;U D U D Ub Ub L Db Lb Db U D L D Lb U Db Db U U;20;0.05
+7;8;1;E5-E7-E8-K2-K4-K8-K9;Rb Ub Ub R Ub Ub;6;0.17

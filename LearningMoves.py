@@ -10,12 +10,12 @@ import concurrent.futures
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ------------------------------------------------------------------
-# Log Improvement: Speichert eine neue Verbesserung in Improvements.csv,
-# falls nicht bereits vorhanden.
+# Log Improvement: Saves a new improvement in Improvements.csv,
+# if not already present.
 # ------------------------------------------------------------------
 def log_improvement(improvements_filename, start_count, end_count, improvement_count,
                     starting_positions, move_sequence, move_count, value):
-    # Falls die Datei nicht existiert, schreibe Header
+    # If the file does not exist, write header
     file_exists = os.path.exists(improvements_filename)
     duplicate = False
     if file_exists:
@@ -27,7 +27,7 @@ def log_improvement(improvements_filename, start_count, end_count, improvement_c
                     duplicate = True
                     break
     if duplicate:
-        return False  # Diese Verbesserung ist bereits gespeichert
+        return False  # This improvement has already been logged
 
     with open(improvements_filename, "a", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=';')
@@ -54,10 +54,10 @@ def log_improvement(improvements_filename, start_count, end_count, improvement_c
 
 # ------------------------------------------------------------------
 # Get Learned Sequence:
-# Liest Improvements.csv und sucht nach einer gespeicherten Zugfolge,
-# deren Start Count exakt dem aktuellen Zustand entspricht.
-# Falls die Anwendung der Zugfolge zu einer Verbesserung führt,
-# wird die mit dem höchsten Value zurückgegeben.
+# Reads Improvements.csv and searches for a stored move sequence,
+# whose start count exactly matches the current state.
+# If applying the move sequence results in an improvement,
+# the one with the highest value is returned.
 # ------------------------------------------------------------------
 def get_learned_sequence_if_available(improvements_filename, current_state, level_targets, moves_mapping):
     if not os.path.exists(improvements_filename):
@@ -466,7 +466,7 @@ def main():
             iteration = 0
             
             while best_count < target and iteration < max_iter:
-                # Zuerst prüfen, ob eine gelernte Zugfolge (aus Improvements.csv) angewendet werden kann:
+                # First, check if a learned move sequence (from Improvements.csv) can be applied:
                 learned_candidate = get_learned_sequence_if_available(IMPROVEMENTS_FILENAME, best_state, level_targets, moves_mapping)
                 if learned_candidate is not None:
                     candidate_count, candidate_state, candidate_seq, candidate_value = learned_candidate
@@ -479,7 +479,7 @@ def main():
                         locked = get_correct_pieces(best_state, level_targets)
                         if best_count >= target:
                             break
-                        # Fahre mit der nächsten Iteration fort, ohne Zufallssuche.
+                        # Proceed to the next iteration without random search.
                         continue
                 
                 iteration += batch_size * attempts_per_task
@@ -512,9 +512,9 @@ def main():
                     best_candidate = max(results, key=lambda r: r[0])
                     candidate_count, candidate_state, candidate_seq = best_candidate
                     if candidate_count > best_count:
-                        # Neue Verbesserung erzielt:
+                        # New improvement achieved:
                         improvement = candidate_count - best_count
-                        # Zum Speichern der Verbesserung in Improvements.csv:
+                        # To log the improvement in Improvements.csv:
                         start_positions = "-".join(sorted(list(get_correct_pieces(best_state, level_targets))))
                         log_improvement(IMPROVEMENTS_FILENAME,
                                         best_count,
@@ -580,7 +580,7 @@ def main():
         
         runtime_str = time.strftime("%H:%M:%S", time.gmtime(elapsed_time))
         
-        # Append run information to Results.csv (inklusive der zwei neuen Zähler)
+        # Append run information to Results.csv (including the two new counters)
         with open(results_filename, "a", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile, delimiter=';')
             writer.writerow([
