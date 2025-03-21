@@ -1,0 +1,15 @@
+Date;Version;Changes
+…;…;…
+2025-03-12;FirstLevel_V1.1.10.2;Improved performance by reusing the ProcessPoolExecutor
+2025-03-13;FirstLevel_V1.1.10.3;Random generation of start position for each run
+2025-03-14;RubicCubeRunner_0.1.00;Removal of unnecessary components in the script and complete adaptation to the English language
+2025-03-15;RubicCubeRunner_0.1.01;"Random start position, by applying a new parameter that specifies the moves for shuffling the cube
+Use of previously saved positions that improve the cube
+- Column titles are inserted in the result file again
+- Use of previously saved positions that improve the cube"
+2025-03-16;RubicCubeRunner_0.1.02;- File output of the login information deactivated
+2025-03-16;RubicCubeRunner_0.1.03;"Removed all functionalities for learning move sequences, as it did not work correctly yet
+Script consolidated. All commented out components removed"
+2025-03-16;RubicCubeRunner_0.1.04;Completely reimplemented, the move sequences are learned and reused.
+2025-03-20;LearningMoves  ;"- Rename Skript
+- Start Version Control with GIT "
