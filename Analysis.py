@@ -1,44 +1,52 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import sys
 
-# Pfad zur CSV-Datei
+# Path to the CSV file (adjust if necessary)
 csv_file = 'Results.csv'
 
-# CSV-Daten laden, Trennzeichen ist ein Semikolon
+# Load CSV data; the delimiter is a semicolon
 try:
     df = pd.read_csv(csv_file, sep=';')
 except FileNotFoundError:
-    print(f"Datei {csv_file} wurde nicht gefunden.")
+    print(f"File {csv_file} not found.")
     sys.exit(1)
 
-# Verfügbare Spalten ausgeben
-print("Verfügbare Spalten in den Daten:")
+# Print available columns in the data
+print("Available columns in the data:")
 print(df.columns.tolist())
 
-# Erwarteter Spaltenname (genau so, wie in der CSV-Datei)
+# Expected column name (exactly as in the CSV file)
 target_column = "Total Correct Pieces"
 
-# Überprüfen, ob die Spalte existiert
+# Check if the target column exists
 if target_column not in df.columns:
-    print(f"Die Spalte '{target_column}' wurde in den Daten nicht gefunden.")
-    print("Bitte überprüfe den Spaltennamen in deiner CSV-Datei.")
+    print(f"The column '{target_column}' was not found in the data.")
+    print("Please check the column name in your CSV file.")
     sys.exit(1)
 
-# X-Achse: Zeilennummer (Index)
+# X-axis: Row number (index)
 x = df.index
 
-# Y-Achse: Anzahl der gefundenen korrekten Steine
+# Y-axis: Total Correct Pieces
 y = df[target_column]
 
-# Grafik erstellen
+# Calculate the trend line using a rolling average over 100 values
+trend = y.rolling(window=100).mean()
+
+# Create the plot
 plt.figure(figsize=(10, 6))
-plt.plot(x, y, marker='o', linestyle='-')
+plt.plot(x, y, marker='o', linestyle='-', label='Data')
+plt.plot(x, trend, color='red', linestyle='--', linewidth=3, label='Trend (100 rolling average)')
+
 plt.ylabel(target_column)
-plt.title('Anzahl der gefundenen korrekten Steine')
+plt.title('Number of Correct Pieces Found')
 
-# X-Achse ohne Beschriftung
-plt.xticks([])
+# Set x-axis tick labels at readable intervals using MaxNLocator (maximum 10 ticks)
+ax = plt.gca()
+ax.xaxis.set_major_locator(ticker.MaxNLocator(nbins=10, integer=True))
 
+plt.legend()
 plt.tight_layout()
 plt.show()
