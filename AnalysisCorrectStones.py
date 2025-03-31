@@ -38,7 +38,7 @@ trend = y.rolling(window=100).mean()
 # Create the plot
 plt.figure(figsize=(10, 6))
 plt.plot(x, y, linestyle='-', label='Data')  # Line plot without data markers
-plt.plot(x, trend, color='red', linestyle='--', linewidth=3, label='Trend (100 rolling average)')
+plt.plot(x, trend, color='red', linestyle='-', linewidth=2, label='Trend (100 rolling average)')
 
 plt.ylabel(target_column)
 plt.title('Number of Correct Pieces Found')

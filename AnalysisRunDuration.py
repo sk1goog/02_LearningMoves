@@ -41,7 +41,7 @@ trend = y.rolling(window=100).mean()
 # Plot erstellen
 plt.figure(figsize=(10, 6))
 plt.plot(x, y, linestyle='-', label='Data')  # Linienplot ohne Datenmarker
-plt.plot(x, trend, color='red', linestyle='--', linewidth=3, label='Trend (100 rolling average)')
+plt.plot(x, trend, color='red', linestyle='-', linewidth=2, label='Trend (100 rolling average)')
 
 plt.xlabel('Index')
 plt.ylabel('Run Duration (seconds)')

@@ -46,7 +46,7 @@ trend_moves = y_moves.rolling(window=100).mean()
 # Plot erstellen
 plt.figure(figsize=(10, 6))
 plt.plot(x, y_moves, linestyle='-', label='MovesPerPiece Data')
-plt.plot(x, trend_moves, color='red', linestyle='--', linewidth=3, label='Trend (100 rolling average)')
+plt.plot(x, trend_moves, color='red', linestyle='-', linewidth=2, label='Trend (100 rolling average)')
 plt.xlabel('Index')
 plt.ylabel('MovesPerPiece')
 plt.title('Moves Per Piece Trend')
