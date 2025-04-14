@@ -1,0 +1,159 @@
+===== Run 12921 of 50000 =====
+Using parameter set: P1
+----- Starting cube position -----
+        g g g
+        g g g
+        g g g
+r r r | w w w | o o o
+r r r | w w w | o o o
+r r r | w w w | o o o
+        b b b
+        b b b
+        b b b
+        y y y
+        y y y
+        y y y
+Number of correctly positioned pieces (E1): 8
+----- After shuffling moves -----
+Original cube state before shuffling:
+        g g g
+        g g g
+        g g g
+r r r | w w w | o o o
+r r r | w w w | o o o
+r r r | w w w | o o o
+        b b b
+        b b b
+        b b b
+        y y y
+        y y y
+        y y y
+Number of shuffling moves (NO_MOVES_TO_SHUFFLE): 30
+Shuffle move sequence: R U Bb Bb Bb Lb Bb D U Bb Lb Db Ub L Rb R U Ub Rb F F Bb Db Fb B F Fb Bb B D
+Cube state after shuffling:
+        b o b
+        r g g
+        o w w
+o w y | g b g | r y r
+g r o | b w r | b o w
+r y o | b g o | w y r
+        w r g
+        b b o
+        w r g
+        b y y
+        o y g
+        y w y
+Starting solution search ...
+Available CPU cores: 10
+
+----- Solution for level E1 -----
+Applying learned sequence: Lb with value 1.00
+Applying learned sequence: Rb B with value 1.00
+Applying learned sequence: U Fb Ub with value 0.33
+Applying learned sequence: D F Lb Fb with value 0.25
+Applying learned sequence: Db B D Bb with value 0.25
+Applying learned sequence: D Rb Db R with value 0.25
+Applying learned sequence: Db Fb Db F D F Rb Db R with value 0.11
+Applying learned sequence: Bb Rb Db R B B D R Db Bb with value 0.10
+
+----- Solution for level E2 -----
+Applying learned sequence: R F R Ub Rb U Rb Fb with value 0.12
+Applying learned sequence: L F L Bb Lb B Fb Lb with value 0.12
+Applying learned sequence: L D L D Lb Lb Db Lb Db Lb with value 0.10
+
+----- Solution for level E3 -----
+Applying learned sequence: Db with value 1.00
+Applying learned sequence: Db Rb Bb Db B D R with value 0.43
+Applying learned sequence: Lb U Lb Db Ub D Lb Lb U D L Db L D Lb Lb Ub Db with value 0.11
+Applying learned sequence: D Fb Db F B Db Db Fb Db F Db Db Bb with value 0.15
+
+*** Final result for Run 12921 ***
+Cube state:
+        g g g
+        g g g
+        g g g
+r r r | w w w | o o o
+r r r | w w w | o o o
+r r r | w w w | o o o
+        b b b
+        b b b
+        b b b
+        y y y
+        y y y
+        y y y
+
+Number of correctly positioned pieces (E3 i.e., best solution): 20
+Total move sequence: Lb Rb B U Fb Ub D F Lb Fb Db B D Bb D Rb Db R Db Fb Db F D F Rb Db R Bb Rb Db R B B D R Db Bb R F R Ub Rb U Rb Fb L F L Bb Lb B Fb Lb L D L D Lb Lb Db Lb Db Lb Db Db Rb Bb Db B D R Lb U Lb Db Ub D Lb Lb U D L Db L D Lb Lb Ub Db D Fb Db F B Db Db Fb Db F Db Db Bb
+Number of moves: 102
+Runtime: 0.15 seconds
+
+
+
+
+
+
+
+Verify alte Notation:
+
+ok
+
+
+
+Verify HTM Notation
+
+🔄 Reading move sequence from clipboard …
+
+📥 Original sequence (old notation):
+Lb Rb B U Fb Ub D F Lb Fb Db B D Bb D Rb Db R Db Fb Db F D F Rb Db R Bb Rb Db R B B D R Db Bb R F R Ub Rb U Rb Fb L F L Bb Lb B Fb Lb L D L D Lb Lb Db Lb Db Lb Db Db Rb Bb Db B D R Lb U Lb Db Ub D Lb Lb U D L Db L D Lb Lb Ub Db D Fb Db F B Db Db Fb Db F Db Db Bb
+🔢 Number of moves (old notation): 102
+
+📥 Converted sequence (HTM converted):
+L' R' B U F' U' D F L' F' D' B D B' D R' D' R D' F' D' F D F R' D' R B' R' D' R B B D R D' B' R F R U' R' U R' F' L F L B' L' B F' L' L D L D L' L' D' L' D' L' D' D' R' B' D' B D R L' U L' D' U' D L' L' U D L D' L D L' L' U' D' D F' D' F B D' D' F' D' F D' D' B'
+🔢 Number of moves (HTM converted): 102
+
+📋 Applied transformations:
+ - B B → B2
+ - L' L' → L2
+ - D' D' → D2
+ - L' L' → L2
+ - L' L' → L2
+ - D' D' → D2
+ - D' D' → D2
+
+✅ Final transformed sequence (HTM notation):
+L' R' B U F' U' D F L' F' D' B D B' D R' D' R D' F' D' F D F R' D' R B' R' D' R B2 D R D' B' R F R U' R' U R' F' L F L B' L' B F' L' L D L D L2 D' L' D' L' D2 R' B' D' B D R L' U L' D' U' D L2 U D L D' L D L2 U' D' D F' D' F B D2 F' D' F D2 B'
+🔢 Number of moves (final HTM notation): 95
+(base) steffenkraft@Mac 00_Tools % 
+
+
+
+----- Cube Starting Position -----
+        b o b
+        r g g
+        o w w
+o w y | g b g | r y r
+g r o | b w r | b o w
+r y o | b g o | w y r
+        w r g
+        b b o
+        w r g
+        b y y
+        o y g
+        y w y
+
+Enter a sequence of moves in HTM notation (or 'stop'): L' R' B U F' U' D F L' F' D' B D B' D R' D' R D' F' D' F D F R' D' R B' R' D' R B2 D R D' B' R F R U' R' U R' F' L F L B' L' B F' L' L D L D L2 D' L' D' L' D2 R' B' D' B D R L' U L' D' U' D L2 U D L D' L D L2 U' D' D F' D' F B D2 F' D' F D2 B'
+
+----- Current Cube Position -----
+        g g g
+        g g g
+        g g g
+r r r | w w w | o o o
+r r r | w w w | o o o
+r r r | w w w | o o o
+        b b b
+        b b b
+        b b b
+        y y y
+        y y y
+        y y y
+
