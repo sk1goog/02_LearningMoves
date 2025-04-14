@@ -4320,3 +4320,4 @@ Start Count;End Count;Improvement Count;Starting Positions;Move Sequence;Move Co
 5;6;1;E1-E3-K1-K3-K4;Bb U R Ub;4;0.25
 3;4;1;E1-K2-K4;R R Db R;4;0.25
 2;3;1;E1-E3;Fb U L Ub;4;0.25
+3;4;1;E2-K2-K4;L F Lb Fb;4;0.25
